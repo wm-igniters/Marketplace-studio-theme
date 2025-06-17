@@ -1,0 +1,144 @@
+// lin-height
+
+.lh-64.app-label {
+  line-height: var(--lh-64);
+}
+
+.lh-44.app-label {
+  line-height: var(--lh-44);
+}
+
+.lh-36.app-label {
+  line-height: var(--lh-36);
+}
+
+.lh-30.app-label {
+  line-height: var(--lh-30);
+}
+
+.lh-25.app-label {
+  line-height: var(--lh-25);
+}
+
+.lh-24.app-label {
+  line-height: var(--lh-24);
+}
+
+.lh-18.app-label {
+  line-height: var(--lh-18);
+}
+
+.lh-16.app-label {
+  line-height: var(--lh-16);
+}
+
+.lh-15.app-label {
+  line-height: var(--lh-15);
+}
+
+.lh-20.app-label {
+  line-height: var(--lh-20);
+}
+
+.lh-normal.app-label {
+  line-height: var(--lh-normal);
+}
+.font-secondary {
+  font-family: var(--wm-font-family-secondary);
+}
+.font-20 {
+  font-size: var(--wm-font-20);
+}
+.list-item-icon .app-icon {
+  font-size: var(--wm-h2-font-size);
+  width: 24px;
+  height: 24px;
+  color: var(--wm-color-secondary);
+  font-weight: 500;
+}
+
+.btn-transparent.text-danger .btn-caption {
+  border-bottom: 1px solid;
+  padding: 1px 2px;
+}
+.btn.app-button.btn-md {
+  min-height: var(--wm-btn-height-md);
+  border-radius: 30px;
+}
+
+.wm-scroll-content.app-page-content {
+  max-height: ~"calc(100vh - 170px)";
+  overflow: auto;
+}
+
+//to fix the style of the icon
+.fa-lg {
+  line-height: var(--wm-line-height);
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+//form-group styles which is used in the form or outside the form
+.form-group {
+  .control-label {
+    font-weight: var(--wm-font-weight-medium);
+  }
+}
+
+//To fix the alignmet style issue in pages liek artifacts, artifactTypes, spaces etc
+.app-livelist {
+  &.list-card {
+    margin: 0 -8px;
+  }
+}
+
+//This is used to show the list of templates in the home page, editArtifact and defineArtifact pages
+.app-livelist {
+  &.list-template-card {
+    .list-group {
+      .app-list-item {
+        border-radius: var(--border-radius-small);
+        margin: var(--wm-space-1) 0;
+        > .app-container {
+          .app-container:first-child {
+            background-color: #f5f5f5;
+            height: 145px;
+            padding: var(--wm-space-3);
+            border-radius: var(--border-radius-small) var(--border-radius-small)
+              0 0;
+          }
+          .app-container:last-child {
+            text-align: center;
+            padding: var(--wm-space-3);
+            .app-label {
+              color: var(--wm-color-dark);
+              font-weight: var(--wm-font-weight-semibold);
+            }
+          }
+        }
+        &.active {
+          border: 1px solid var(--wm-color-secondary);
+          > .app-container {
+            .app-container:first-child {
+              background-color: var(--wm-color-secondary-10);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//DefineArtifact Page
+.app-container {
+  &.panel {
+    background-color: var(--wm-btn-contrast-white);
+    padding: var(--wm-space-6);
+  }
+}
