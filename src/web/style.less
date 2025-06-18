@@ -5,7 +5,7 @@ html {
 @import url("css-variables.less");
 /**--import specified google font url ex:Lexend--**/
 @import (css)
-  url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /*START - Re-write selectors with css variables with Flat Line Theme*/
 .wm-app {
@@ -62,6 +62,7 @@ html {
     z-index: var(--wm-header-z-index);
     box-shadow: var(--wm-header-shadow);
     padding: var(--wm-header-padding);
+    border-bottom: 1px solid var(--wm-panel-border-color);
     .leftnav-logo-container {
       min-width: var(--wm-aside-panel-width);
       display: flex;
@@ -81,7 +82,7 @@ html {
       align-items: center;
       li.app-nav-item {
         + li {
-          margin-left: var(--wm-space-6);
+          margin-left: var(--wm-space-4);
         }
         a {
           color: var(--wm-header-link-color);
@@ -91,7 +92,7 @@ html {
           font-weight: var(--wm-font-weight-medium);
           i {
             font-size: var(--wm-icon-size-2);
-            color: var(--wm-color-brand);
+            color: var(--wm-color-primary);
           }
           &:focus,
           &:hover {
@@ -129,16 +130,16 @@ html {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 12px;
+          padding: 4px;
           border-radius: 50%;
           cursor: pointer;
-          height: var(--wm-icon-size-5);
-          width: var(--wm-icon-size-5);
-          // border: 1px solid rgba(207, 219, 213, 0.7);
+          height: var(--wm-icon-size-4);
+          width: var(--wm-icon-size-4);
+          background-color: var(--wm-color-grey);
           .app-icon {
             padding: 0;
-            //  font-size:var(--wm-h3-font-size);
-            //  color: var(--wm-icon-color);
+            font-size: var(--wm-h4-font-size);
+            color: var(--wm-text-color);
           }
           .badge {
             background-color: var(--wm-color-danger-400);
@@ -168,9 +169,19 @@ html {
         }
         .btn {
           margin-top: -0.5px;
-          min-height: auto;
+          min-height: 32px;
           .app-icon {
-            font-size: var(--wm-icon-size-2);
+            font-size: var(--wm-h4-font-size);
+          }
+          &.circle {
+            border-radius: 50%;
+            padding: 4px;
+            min-height: 32px;
+            min-width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--wm-color-grey);
           }
         }
       }
@@ -755,7 +766,6 @@ html {
     justify-content: center;
     .app-icon {
       padding: 0;
-      font-size: var(--btn-icon-size);
       + span + .btn-caption,
       + .btn-caption {
         &:not(:empty) {
@@ -814,6 +824,7 @@ html {
         margin-top: 0;
       }
     }
+
     &:before {
       content: "";
       top: 0;
@@ -908,15 +919,8 @@ html {
       .app-icon {
         color: var(--btn-default-icon-color);
       }
-      .fa-sort-amount-desc:before {
-        font-size: 12px;
-      }
-      &.btn-basic,
-      &.btn-stroked {
-        --wm-btn-text-color: var(--wm-btn-contrast-black);
-      }
-      &.btn-raised {
-        --wm-btn-state-layer-color: var(--wm-btn-text-color);
+      &.border-md{
+        border-radius: var(--border-radius-md);
       }
       &.social-btn {
         --wm-btn-radius-base: 51px;
@@ -1284,14 +1288,11 @@ html {
 
   //Switch
   .app-switch {
-    box-shadow: none;
-    border-radius: var(--border-radius-base);
-    height: var(--switch-height);
-    background: var(--wm-color-grey);
+    border-radius: var(--border-radius-md);
+    background: var(--wm-switch-bg);
     min-width: 80px;
     min-height: 40px;
     width: auto; //100%;
-    border-radius: 8px;
     padding: 4px;
     display: flex;
     align-items: center;
@@ -1320,7 +1321,7 @@ html {
       .btn {
         padding: 8px;
         min-height: auto;
-        font-weight: var(--wm-font-weight-bold);
+        font-weight: var(--wm-font-weight-medium);
         color: var(--wm-text-muted);
         background-color: transparent;
         text-transform: none;
@@ -1362,6 +1363,37 @@ html {
       color: var(--primary-bg-text);
       box-shadow: none;
       font-weight: var(--wm-font-weight-medium);
+    }
+    &.bg-transparent{
+      background-color: transparent;
+      box-shadow: none;
+      .btn{
+        background-color: rgba(240, 242, 244, 1);
+        border: 1px solid rgba(29, 29, 32, 0.03);
+        border-radius: var(--border-radius-md);
+      }
+      .btn-group {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      box-shadow: none;
+      > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        border-radius: 8px;
+        margin-right: 6px;
+      }
+      > .btn:last-child:not(:first-child):not(.dropdown-toggle) {
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        border-radius: 8px;
+        margin-left: 6px;
+      }
+      > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+        border-radius: 6px;
+        margin: 0 6px;
+      }
+    }
     }
   }
 
@@ -1708,7 +1740,42 @@ html {
     align-items: center;
     justify-content: center;
   }
-
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-2 {
+    flex: 2;
+  }
+  .flex-3 {
+    flex: 3;
+  }
+  .flex-4 {
+    flex: 4;
+  }
+  .flex-5 {
+    flex: 5;
+  }
+  .flex-6 {
+    flex: 6;
+  }
+  .flex-7 {
+    flex: 7;
+  }
+  .flex-8 {
+    flex: 8;
+  }
+  .flex-9 {
+    flex: 9;
+  }
+  .flex-10 {
+    flex: 10;
+  }
+  .flex-11 {
+    flex: 11;
+  }
+  .flex-12 {
+    flex: 12;
+  }
   //space classes
   .space-0 {
     padding: var(--wm-space-0);
@@ -1749,7 +1816,12 @@ html {
   .space-12 {
     padding: var(--wm-space-12);
   }
-
+  .screen-height{
+    height: ~"calc(100vh - var(--wm-header-height))";
+  }
+  .screen-width{
+    width: 100vw;
+  }
   // background
   .bg-primary {
     background-color: var(--wm-color-primary);
@@ -3658,14 +3730,18 @@ html {
 
   .panel,
   .card {
-    border-radius: 4px;
-    border: 1px solid #f0f0f0;
-    box-shadow: 0 1px 3px #3f3f4426;
+    border-radius: 8px;
     padding: 0px;
     background-color: var(--wm-color-contrast-light);
-    margin: 20px 0;
-    &.panel-secondary > .panel-heading {
-      background: var(--brand-secondary);
+    box-shadow: none;
+    &.bs-1 {
+      box-shadow: var(--wm-panel-box-shadow);
+    }
+    &.border-1 {
+      border: 1px solid var(--wm-panel-border-color);
+    }
+    &.br-0{
+      border-radius: 0;
     }
     .panel-heading {
       padding: 16px;
@@ -3685,20 +3761,6 @@ html {
           text-transform: uppercase;
         }
         .app-icon {
-        }
-        .description {
-          font-family: var(--headings-font-family);
-          font-size: var(--small);
-          font-weight: var(--body-font-weight);
-          line-height: normal;
-          text-transform: var(--text-transform-body);
-          color: var(--subheading-color); //Subheading text color
-          font-style: normal;
-          margin-top: 0;
-          &:not(:empty) {
-            margin-top: 0px;
-          }
-          // opacity: .7;
         }
       }
       .panel-actions {
@@ -6414,7 +6476,7 @@ html {
           &.active {
             > a {
               background-color: var(--wm-color-contrast-light);
-              color: var(--wm-color-brand);
+              color: var(--wm-color-primary);
               border-color: var(--wm-color-info);
               border-width: 0 0 3px 0;
               font-weight: var(--wm-font-weight-medium);

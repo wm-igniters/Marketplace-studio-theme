@@ -18,8 +18,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
 :root {
   /**--Colours--**/
   /*--Primary colours--*/
-  --wm-color-primary: #ff6a00;
-  --wm-color-brand: #0f2e66;
+  --wm-color-primary: #FF6A00;
   --wm-color-primary-10: ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 90%)";
   --wm-color-primary-20: rgba(0, 139, 72, 0.2);
   --wm-color-primary-30: ~"color-mix(in srgb, var(--wm-color-primary), var(--wm-color-contrast-light) 50%)";
@@ -47,7 +46,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   /*--tertiary color*/
   --wm-color-tertiary: #458897;
   --wm-wizard-color: #656df9;
-  --wm-color-grey: rgba(239, 241, 240, 1);
+  --wm-color-grey: rgba(242, 243, 244, 1);
 
   /*--Action colours--*/
   //info
@@ -107,19 +106,18 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-body-bg-color: #fafbfc;
   --wm-body-font-weight: var(--wm-font-weight-regular);
   --wm-body-text-transform: none;
-  --wm-text-color: #616161;
+  --wm-text-color: rgba(29, 29, 32, 1);
   --wm-text-color-panel: rgba(102, 102, 102, 1);
   --wm-link-color: rgba(41, 109, 246, 1);
-  --wm-separator-color: #d5d7da;
-  --wm-text-muted: rgba(104, 119, 138, 1);
-  --wm-icon-color: rgba(104, 119, 138, 1);
-  --wm-text-muted-light: rgba(66, 70, 82, 0.8);
+  --wm-separator-color: rgba(226, 227, 228, 1);
+  --wm-text-muted: rgba(29, 29, 32, .5);
+  --wm-text-muted-light: rgba(104, 119, 138, 1);
   --wm-color-white-light: rgba(246, 246, 248, 1);
   --wm-border-color: rgba(0, 0, 0, 0.5); //rgba(214, 214, 214, 1);;
 
   /**--Font--**/
   --wm-font-family: "Inter", sans-serif, var(--wm-font-family-backup);
-  --wm-font-family-secondary: "", sans-serif;
+  --wm-font-family-secondary:"DM Sans", sans-serif;
   --wm-font-family-backup: "Arial", sans-serif;
   --wm-font-weight-thin: 100;
   --wm-font-weight-extralight: 200;
@@ -132,7 +130,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-font-weight-black: 900;
   --wm-line-height: 1;
   --wm-heading-text-color: var(--wm-text-color);
-  --wm-heading-font-family: var(--wm-font-family);
+  --wm-heading-font-family: var(--wm-font-family-secondary);
 
   /* Font Sizes */
   --wm-font-size-base: var(--wm-h5-font-size);
@@ -202,7 +200,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-icon-size-6: 52px;
 
   /**--Page Layout--**/
-  --wm-page-spacing: 1.5rem 2rem;
+  --wm-page-spacing: 0px;
   /*--app header--*/
   --wm-header-bg-color: var(--wm-color-contrast-light);
   --wm-header-text-color: var(--wm-text-color);
@@ -210,16 +208,18 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-header-link-color-hover: var(--wm-color-primary);
   --wm-header-link-color-active: var(--wm-color-primary);
   --wm-header-logo-height: 64px;
-  --wm-header-height: 72;
+  --wm-header-height: 48px;
   --wm-header-z-index: 10;
-  --wm-header-shadow: 0px 2px 5px 0px #0000000a;
-  --wm-header-padding: 18px 24px;
+  --wm-header-shadow: none;
+  --wm-header-padding: 8px 16px;
 
   /*--app top nav--*/
   --wm-top-nav-box-shadow: none;
   --wm-top-nav-z-index: 3;
 
   /*--app side panel--*/
+  --wm-panel-border-color:rgba(226, 227, 228, 1);
+  --wm-panel-box-shadow:0px 0px 4px 0px rgba(0, 0, 0, 0.12);
   --wm-aside-panel-width: 240px;
   --wm-aside-panel-link-height: auto;
   --wm-aside-panel-collapsible-width: 0px;
@@ -227,18 +227,18 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-aside-panel-border-color: #eff1f0;
   --wm-aside-panel-shadow: none;
   --wm-aside-panel-bg-color: #f2f3f4;
-  --wm-aside-panel-text-color: var(--wm-color-brand);
+  --wm-aside-panel-text-color: var(--wm-text-color);
   --wm-aside-panel-link-spacing: var(--wm-space-4);
-  --wm-aside-panel-link-color: var(--wm-color-brand);
-  --wm-aside-panel-link-hover-color: var(--wm-color-brand);
-  --wm-aside-panel-link-active-color: var(--wm-color-brand);
+  --wm-aside-panel-link-color: var(--wm-text-color);
+  --wm-aside-panel-link-hover-color: var(--wm-text-color);
+  --wm-aside-panel-link-active-color: var(--wm-text-color);
   --wm-aside-panel-link-bg-color: var(--wm-color-contrast-light);
   --wm-aside-panel-link-hover-bg-color: transparent;
   --wm-aside-panel-link-active-bg-color: transparent;
   --wm-aside-panel-link-icon-size: 16px;
-  --wm-aside-panel-link-icon-color: var(--wm-color-brand);
-  --wm-aside-panel-link-icon-hover-color: var(--wm-color-brand);
-  --wm-aside-panel-link-icon-active-color: var(--wm-color-brand);
+  --wm-aside-panel-link-icon-color: var(--wm-text-color);
+  --wm-aside-panel-link-icon-hover-color: var(--wm-text-color);
+  --wm-aside-panel-link-icon-active-color: var(--wm-text-color);
   --wm-aside-panel-link-indicator-active-color: transparent;
   --tabs-border-gradient: var(--wm-color-info);
 
@@ -270,18 +270,18 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-select-border-color: #e1e1e7;
 
   /*--button--*/
-  --wm-btn-font-size: var(--wm-h4-font-size);
+  --wm-btn-font-size: var(--wm-h5-font-size);
   --wm-btn-text-color: #414651; //var(--wm-text-color);
   --wm-btn-font-weight: var(--wm-font-weight-medium);
   --wm-btn-shadow: none;
-  --wm-btn-height-base: 40px;
+  --wm-btn-height-base: 32px;
   --wm-btn-height-xs: 28px;
   --wm-btn-height-sm: 36px;
   --wm-btn-height-md: 44px;
   --wm-btn-height-lg: 48px;
   --wm-btn-min-width: auto; //120px;
-  --wm-btn-space: var(--wm-space-3) var(--wm-space-8);
-  --wm-btn-radius-base: 4px;
+  --wm-btn-space: var(--wm-space-2) var(--wm-space-8);
+  --wm-btn-radius-base: 6px;
   --wm-btn-state-layer-color: transparent;
   --wm-btn-hover-state-layer-opacity: 0.2;
   --wm-btn-pressed-state-layer-opacity: 0.12;
@@ -341,4 +341,12 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-app-steps-bg: rgba(245, 247, 246, 1);
   --wm-horizontal-wizard-content-max-wd: 1120px;
   --wm-horizontal-wizard-content-height: 750px;
+  //switch
+  --wm-switch-bg:#e2e5eb;
+
+  //bannersection
+
+  --wm-banner-height:200px;
+  --wm-banner-icon-size:80px;
+
 }
