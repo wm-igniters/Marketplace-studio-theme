@@ -265,7 +265,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-btn-height-md: 44px;
   --wm-btn-height-lg: 48px;
   --wm-btn-min-width: auto;
-  --wm-btn-space: var(--wm-space-2) var(--wm-space-8);
+  --wm-btn-space: var(--wm-space-2) var(--wm-space-5);
   --wm-btn-radius-base: 6px;
   --wm-btn-state-layer-color: transparent;
   --wm-btn-hover-state-layer-opacity: 0.2;
@@ -9832,6 +9832,30 @@ button.wm-app .close {
 .wm-app .flex-12 {
   flex: 12;
 }
+.wm-app .gap-1 {
+  gap: var(--wm-space-1);
+}
+.wm-app .gap-2 {
+  gap: var(--wm-space-2);
+}
+.wm-app .gap-3 {
+  gap: var(--wm-space-3);
+}
+.wm-app .gap-4 {
+  gap: var(--wm-space-4);
+}
+.wm-app .gap-5 {
+  gap: var(--wm-space-5);
+}
+.wm-app .gap-6 {
+  gap: var(--wm-space-6);
+}
+.wm-app .gap-7 {
+  gap: var(--wm-space-7);
+}
+.wm-app .gap-8 {
+  gap: var(--wm-space-8);
+}
 .wm-app .space-0 {
   padding: var(--wm-space-0);
 }
@@ -11102,12 +11126,7 @@ button.wm-app .close {
 }
 .wm-app .app-datanavigator .pager li a {
   margin: 0 0.5em 0 0;
-  padding: 12px 20px;
-  box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
-  -webkit-box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
-  -moz-box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
-  -ms-box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
-  -o-box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
+  padding: 10px;
   color: var(--brand-secondary);
 }
 .wm-app .pagination {
@@ -11978,7 +11997,10 @@ button.wm-app .close {
 }
 .wm-app .app-livelist > div.app-datanavigator,
 .wm-app .app-livelist > nav.app-datanavigator {
-  width: 52pt;
+  width: 36px;
+  padding: 0;
+  overflow: visible;
+  z-index: 4;
 }
 .wm-app .app-card {
   margin: var(--wm-space-0);
@@ -13710,7 +13732,7 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
   margin: 0 0 0 10px;
 }
 .wm-app .app-grid .panel-footer .app-datagrid-paginator .app-datanavigator a:focus {
-  box-shadow: inset 0 0 0 1px var(--brand-secondary);
+  box-shadow: inset 0 0 0 1px var(--wm-color-secondary);
 }
 .wm-app .app-grid .panel-footer .app-datagrid-paginator .app-datanavigator .disabled a:focus {
   box-shadow: none;
@@ -13894,7 +13916,7 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .app-tabs .nav.nav-tabs {
   padding: 0;
-  border: none;
+  border-color: rgba(207, 219, 213, 0.6);
   overflow-x: scroll;
   overflow-y: hidden;
 }
@@ -13912,7 +13934,7 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 .wm-app .app-tabs .nav.nav-tabs > li.active > a {
   background-color: var(--wm-color-contrast-light);
   color: var(--wm-color-primary);
-  border-color: var(--wm-color-info);
+  border-color: var(--wm-color-secondary);
   border-width: 0 0 3px 0;
   font-weight: var(--wm-font-weight-medium);
 }
@@ -14155,13 +14177,14 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .app-datanavigator .pager li a {
   box-shadow: none;
-  background-color: #296df6;
-  background-image: var(--primary-bg-gradient);
+  background-color: var(--wm-color-secondary);
   color: #fff;
-  border-color: var(--wm-color-primary);
+  margin: 0 8px;
+}
+.wm-app .app-datanavigator .pager li.disabled {
+  display: none;
 }
 .wm-app .app-datanavigator .pager li.disabled a {
-  background: color-mix(in srgb, var(--brand-disabled-bg), transparent 80%);
   color: #777777;
   border-color: #bbbbbb;
 }
@@ -14555,6 +14578,19 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .app-livelist.tag-list li.app-list-item + li.app-list-item {
   margin-left: 8px;
+}
+.wm-app .carousel-list.app-livelist .app-livelist-container {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+.wm-app .carousel-list.app-livelist .app-livelist-container .app-list-item .carousel-image {
+  width: 210px;
+  border-radius: 5px;
+  height: 166px;
+}
+.wm-app .carousel-list.app-livelist .app-datanavigator:has(li.disabled) {
+  display: none;
 }
 .wm-app.theme-dark {
   --wm-dark: #111223;

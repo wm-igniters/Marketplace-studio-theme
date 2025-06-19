@@ -256,3 +256,21 @@
 .app-livelist.tag-list li.app-list-item + li.app-list-item {
   margin-left: 8px;
 }
+
+.carousel-list.app-livelist {
+  .app-livelist-container {
+    display: flex;
+    gap: 12px;
+    overflow: hidden;
+    .app-list-item {
+      .carousel-image {
+        width: 210px;
+        border-radius: 5px;
+        height: 166px;
+      }
+    }
+  }
+  .app-datanavigator:has(li.disabled) {
+    display: none;
+  }
+}
