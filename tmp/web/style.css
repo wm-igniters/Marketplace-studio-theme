@@ -98,7 +98,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-text-color-panel: #666666;
   --wm-link-color: #296df6;
   --wm-separator-color: #e2e3e4;
-  --wm-text-muted: rgba(29, 29, 32, 0.5);
+  --wm-text-muted: #616161;
   --wm-text-muted-light: #68778a;
   --wm-color-white-light: #f6f6f8;
   --wm-border-color: rgba(0, 0, 0, 0.5);
@@ -208,7 +208,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-top-nav-z-index: 3;
   /*--app side panel--*/
   --wm-panel-border-color: #e2e3e4;
-  --wm-panel-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+  --wm-panel-box-shadow: 0px 10px 30px 0px rgba(181, 190, 199, 0.3);
   --wm-aside-panel-width: 240px;
   --wm-aside-panel-link-height: auto;
   --wm-aside-panel-collapsible-width: 0px;
@@ -317,6 +317,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-switch-bg: #e2e5eb;
   --wm-banner-height: 200px;
   --wm-banner-icon-size: 80px;
+  --wm-bg-highlight: #e9edf1;
 }
 /**--import specified google font url ex:Lexend--**/
 /*START - Re-write selectors with css variables with Flat Line Theme*/
@@ -9083,6 +9084,12 @@ button.wm-app .close {
   font-weight: 600;
   margin-bottom: -1.5px;
 }
+.wm-app .btn-primary.rounded {
+  border-radius: 22px;
+  padding: 8px 20px;
+  font-size: var(--wm-h6-font-size);
+  --wm-btn-font-weight: var(--wm-font-weight-semibold);
+}
 .wm-app .btn-secondary {
   --wm-btn-text-color: var(--wm-color-primary);
   --wm-btn-bg-color: var(--wm-btn-contrast-white);
@@ -10193,8 +10200,9 @@ button.wm-app .close {
 .wm-app .app-tabs {
   border-radius: 4px;
   box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.06);
-  padding: var(--wm-space-6);
+  padding: var(--wm-space-0);
   background: var(--wm-color-contrast-light);
+  margin-top: 20px;
 }
 .wm-app .app-tabs .tab-content {
   min-height: 4rem;
@@ -11518,20 +11526,22 @@ button.wm-app .close {
   border-radius: 8px;
   padding: 0px;
   background-color: var(--wm-color-contrast-light);
-  box-shadow: none;
+  box-shadow: var(--wm-panel-box-shadow);
   /* styles for tabs inside panels to handle the padding values*/
 }
-.wm-app .panel.bs-1,
-.wm-app .card.bs-1 {
-  box-shadow: var(--wm-panel-box-shadow);
-}
-.wm-app .panel.border-1,
-.wm-app .card.border-1 {
-  border: 1px solid var(--wm-panel-border-color);
-}
-.wm-app .panel.br-0,
-.wm-app .card.br-0 {
+.wm-app .panel.control-panel.app-container,
+.wm-app .card.control-panel.app-container {
   border-radius: 0;
+  border: 1px solid var(--wm-panel-border-color);
+  box-shadow: none;
+  padding: 20px;
+}
+.wm-app .panel.control-panel.app-container .control-panel-header,
+.wm-app .card.control-panel.app-container .control-panel-header {
+  margin: -20px;
+  padding: 12px 20px;
+  margin-bottom: 0;
+  box-shadow: 0px 1px 0px 0px #e2e2e2;
 }
 .wm-app .panel .panel-heading,
 .wm-app .card .panel-heading {
@@ -13933,10 +13943,10 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .app-tabs .nav.nav-tabs > li.active > a {
   background-color: var(--wm-color-contrast-light);
-  color: var(--wm-color-primary);
+  color: var(--wm-text-color);
   border-color: var(--wm-color-secondary);
   border-width: 0 0 3px 0;
-  font-weight: var(--wm-font-weight-medium);
+  font-weight: var(--wm-font-weight-semibold);
 }
 .wm-app .app-tabs .nav.nav-tabs > li.active > a:hover,
 .wm-app .app-tabs .nav.nav-tabs > li.active > a:focus {
@@ -13947,13 +13957,12 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
   background: var(--tabs-border-gradient);
 }
 .wm-app .app-tabs .nav.nav-tabs > li > a {
-  padding: var(--wm-space-3) var(--wm-space-4);
+  padding: var(--wm-space-3) var(--wm-space-5);
   margin: 0;
   font-size: var(--wm-h5-font-size);
-  font-weight: var(--wm-font-weight-medium);
-  line-height: var(--lh-18);
+  font-weight: var(--wm-font-weight-semibold);
   text-align: center;
-  color: var(--wm-text-muted-light);
+  color: var(--wm-text-color);
 }
 .wm-app .app-tabs .nav.nav-tabs > li > a:hover {
   background-color: var(--tab-hover-bg);
@@ -13962,11 +13971,6 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 .wm-app .app-tabs .nav.nav-tabs > li > a:focus {
   background-color: var(--tab-focus-bg);
   color: var(--tab-text-color);
-}
-.wm-app .app-tabs .nav.nav-tabs > li > a:active,
-.wm-app .app-tabs .nav.nav-tabs > li > a .active {
-  background-color: var(--tab-active-bg);
-  color: var(--wm-color-primary);
 }
 .wm-app .app-tabs.inverted > ul.nav:not(.nav-stacked) {
   border-bottom-color: transparent;
@@ -14177,9 +14181,16 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .app-datanavigator .pager li a {
   box-shadow: none;
+  background-color: #fff;
+  color: var(--wm-color-secondary);
+  margin: 0 8px;
+  border: 1.5px solid var(--wm-color-secondary);
+}
+.wm-app .app-datanavigator .pager li a:hover,
+.wm-app .app-datanavigator .pager li a:focus,
+.wm-app .app-datanavigator .pager li a:active {
   background-color: var(--wm-color-secondary);
   color: #fff;
-  margin: 0 8px;
 }
 .wm-app .app-datanavigator .pager li.disabled {
   display: none;
@@ -14381,6 +14392,10 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
     padding: 2em;
   }
 }
+.wm-app .text-underline {
+  text-underline-offset: 3px;
+  text-decoration: underline;
+}
 .wm-app .text-ls-2 {
   letter-spacing: 2px;
 }
@@ -14457,33 +14472,60 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 .wm-app .app-livelist.list-card {
   margin: 0 -8px;
 }
+.wm-app .app-livelist li.app-list-item:focus:not(.active):not(.disable-item) {
+  background-color: transparent;
+}
+.wm-app .app-livelist.list-template-card .list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .wm-app .app-livelist.list-template-card .list-group .app-list-item {
   border-radius: var(--border-radius-small);
   margin: var(--wm-space-1) 0;
 }
-.wm-app .app-livelist.list-template-card .list-group .app-list-item > .app-container .app-container:first-child {
-  background-color: #f5f5f5;
-  height: 145px;
-  padding: var(--wm-space-3);
-  border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+.wm-app .app-livelist.list-template-card .list-group .app-list-item .img-banner-content {
+  background-color: #f2f2f6;
+  border-radius: var(--border-radius-small);
+  height: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.wm-app .app-livelist.list-template-card .list-group .app-list-item > .app-container .app-container:last-child {
-  text-align: center;
-  padding: var(--wm-space-3);
+.wm-app .app-livelist.list-template-card .list-group .app-list-item .img-banner-content .picture-active-img,
+.wm-app .app-livelist.list-template-card .list-group .app-list-item .img-banner-content .picture-default-img {
+  height: auto;
+  width: auto;
+  border-radius: var(--border-radius-md);
 }
-.wm-app .app-livelist.list-template-card .list-group .app-list-item > .app-container .app-container:last-child .app-label {
-  color: var(--wm-color-dark);
-  font-weight: var(--wm-font-weight-semibold);
+.wm-app .app-livelist.list-template-card .list-group .app-list-item .img-banner-content .picture-active-img {
+  display: none;
 }
-.wm-app .app-livelist.list-template-card .list-group .app-list-item.active {
-  border: 1px solid var(--wm-color-secondary);
+.wm-app .app-livelist.list-template-card .list-group .app-list-item.active .img-banner-content {
+  background-color: #6366f1;
 }
-.wm-app .app-livelist.list-template-card .list-group .app-list-item.active > .app-container .app-container:first-child {
-  background-color: var(--wm-color-secondary-10);
+.wm-app .app-livelist.list-template-card .list-group .app-list-item.active .img-banner-content .picture-active-img {
+  display: block;
+}
+.wm-app .app-livelist.list-template-card .list-group .app-list-item.active .img-banner-content .picture-default-img {
+  display: none;
+}
+.wm-app .app-livelist .list-group .app-list-item .active-check-icon {
+  display: none;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: var(--wm-h4-font-size);
+}
+.wm-app .app-livelist .list-group .app-list-item.active .active-check-icon {
+  color: #fff;
+  display: block;
 }
 .wm-app .app-container.panel {
   background-color: var(--wm-btn-contrast-white);
   padding: var(--wm-space-6) var(--wm-space-7);
+  height: 100%;
 }
 .wm-app .app-container.panel .border-corner {
   display: none;
@@ -14528,8 +14570,8 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
   height: var(--wm-banner-height);
 }
 .wm-app .banner-wrapper .banner-icon-wrapper {
-  margin-top: -74px;
-  padding: var(--wm-space-8);
+  margin-top: -42px;
+  padding: 0 var(--wm-space-8);
 }
 .wm-app .banner-wrapper .banner-icon-wrapper .banner-icon {
   height: var(--wm-banner-icon-size);
@@ -14581,16 +14623,89 @@ s .wm-app .app-timeinput .input-group-btn .btn:focus,
 }
 .wm-app .carousel-list.app-livelist .app-livelist-container {
   display: flex;
-  gap: 12px;
-  overflow: hidden;
+  gap: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.wm-app .carousel-list.app-livelist .app-livelist-container .app-list-item {
+  margin-right: 8px;
 }
 .wm-app .carousel-list.app-livelist .app-livelist-container .app-list-item .carousel-image {
   width: 210px;
   border-radius: 5px;
   height: 166px;
 }
+.wm-app .carousel-list.app-livelist .app-livelist-container.app-horizontal-list::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
 .wm-app .carousel-list.app-livelist .app-datanavigator:has(li.disabled) {
   display: none;
+}
+.wm-app .bg-highlight-grey {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: var(--wm-space-5);
+  border-radius: var(--border-radius-md);
+  background-color: var(--wm-bg-highlight);
+  margin-bottom: var(--wm-space-6);
+}
+.wm-app .br-seprator {
+  border-right: 2px solid rgba(29, 29, 32, 0.08);
+}
+.wm-app .content-wrapper {
+  background-color: #fff;
+  border: 1px solid #ebecf2;
+  border-radius: 6px;
+  margin: 20px 0;
+  overflow: hidden;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.wm-app .content-wrapper .feature-list-header {
+  background-color: #f3f4fa;
+  padding: 12px;
+}
+.wm-app .content-wrapper .feature-list-content {
+  padding: 32px 0;
+}
+.wm-app .feature-internal-list.app-livelist .app-livelist-container {
+  display: flex;
+  gap: 40px;
+}
+.wm-app .feature-internal-list.app-livelist .app-livelist-container .app-list-item .icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(176, 114, 234, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wm-app .feature-list-default.app-livelist .app-livelist-container {
+  padding: 0px 20px;
+}
+.wm-app .feature-list-default.app-livelist .app-livelist-container .app-list-item {
+  padding: 4px 0;
+}
+.wm-app .dynamic-card-list.app-livelist .list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.wm-app .dynamic-card-list.app-livelist .list-group .app-list-item {
+  padding: 16px;
+  border: 1px solid rgba(207, 219, 213, 0.4);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+}
+.wm-app .dynamic-card-list.app-livelist .list-group .app-list-item .card-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
 }
 .wm-app.theme-dark {
   --wm-dark: #111223;
