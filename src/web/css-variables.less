@@ -113,7 +113,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-text-muted: rgba(97, 97, 97, 1);
   --wm-text-muted-light: rgba(104, 119, 138, 1);
   --wm-color-white-light: rgba(246, 246, 248, 1);
-  --wm-border-color: rgba(0, 0, 0, 0.5); //rgba(214, 214, 214, 1);;
+  --wm-border-color: rgba(0, 0, 0, 0.15); //rgba(214, 214, 214, 1);;
 
   /**--Font--**/
   --wm-font-family: "Inter", sans-serif, var(--wm-font-family-backup);
@@ -142,13 +142,14 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-h6-font-size: 0.75rem; /* 12px */
 
   --wm-font-lg: 3.375rem; /* 54px */
-  --wm-font-md: 2.5rem; /* 40px */
+  --wm-font-md: 2rem; /* 32px */
   --wm-font-20: 1.25rem; /* 20px */
   --wm-font-15: 0.9375rem; /* 15px */
   --wm-font-13: 0.8125rem; /* 13px */
   --wm-font-11: 0.6875rem; /* 11px */
   --wm-font-10: 0.625rem; /* 10px */
   --wm-font-8: 0.5rem; /* 8px */
+
 
   /* Line Heights */
   --lh-64: 64px;
@@ -165,8 +166,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --lh-normal: normal;
 
   /**--Break points--**/
-  --wm-screen-max-width: 1440px;
-  --wm-screen-max-width: 1440px;
+  --wm-screen-max-width: 1466px;
   --wm-screen-lg: 1366px;
   --wm-screen-md: 1200px;
   --wm-screen-sm: 920px;
@@ -220,25 +220,25 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   /*--app side panel--*/
   --wm-panel-border-color:rgba(226, 227, 228, 1);
   --wm-panel-box-shadow:0px 10px 30px 0px rgba(181, 190, 199, 0.3);
-  --wm-aside-panel-width: 240px;
+  --wm-aside-panel-width: 60px;
   --wm-aside-panel-link-height: auto;
   --wm-aside-panel-collapsible-width: 0px;
   --wm-aside-separator-color: var(--wm-color-mid-grey-500);
-  --wm-aside-panel-border-color: #eff1f0;
+  --wm-aside-panel-border-color: var(--wm-border-color);
   --wm-aside-panel-shadow: none;
-  --wm-aside-panel-bg-color: #f2f3f4;
+  --wm-aside-panel-bg-color: #fff;
   --wm-aside-panel-text-color: var(--wm-text-color);
-  --wm-aside-panel-link-spacing: var(--wm-space-4);
+  --wm-aside-panel-link-spacing: var(--wm-space-2);
   --wm-aside-panel-link-color: var(--wm-text-color);
-  --wm-aside-panel-link-hover-color: var(--wm-text-color);
+  --wm-aside-panel-link-hover-color: var(--wm-color-secondary);
   --wm-aside-panel-link-active-color: var(--wm-text-color);
   --wm-aside-panel-link-bg-color: var(--wm-color-contrast-light);
-  --wm-aside-panel-link-hover-bg-color: transparent;
-  --wm-aside-panel-link-active-bg-color: transparent;
-  --wm-aside-panel-link-icon-size: 16px;
-  --wm-aside-panel-link-icon-color: var(--wm-text-color);
-  --wm-aside-panel-link-icon-hover-color: var(--wm-text-color);
-  --wm-aside-panel-link-icon-active-color: var(--wm-text-color);
+  --wm-aside-panel-link-hover-bg-color: var(--wm-color-secondary);
+  --wm-aside-panel-link-active-bg-color:var(--wm-color-secondary);
+  --wm-aside-panel-link-icon-size: 20px;
+  --wm-aside-panel-link-icon-color: var(--wm-text-muted);
+  --wm-aside-panel-link-icon-hover-color: var(--wm-color-contrast-light);
+  --wm-aside-panel-link-icon-active-color: var(--wm-color-contrast-light);
   --wm-aside-panel-link-indicator-active-color: transparent;
   --tabs-border-gradient: var(--wm-color-info);
 
@@ -262,7 +262,7 @@ ex: color-mix(in srgb, color1 50%, color2 30%)
   --wm-input-search-place-holder: var(--wm-text-muted);
   --wm-input-bg: var(--wm-color-contrast-light);
   --wm-input-border-color: rgba(151, 154, 164, 0.7);
-  --wm-input-border-radius: 4px;
+  --wm-input-border-radius: 8px;
   --wm-select-spacing: 9px 24px 9px 12px;
   --wm-search-spacing: 0.5rem 2.5rem 0.5rem 1.25rem;
   --wm-input-font-base: var(--wm-h5-font-size);
